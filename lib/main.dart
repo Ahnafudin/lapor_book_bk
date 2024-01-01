@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:lapor_book_bk/firebase_options.dart';
+import 'package:lapor_book_bk/pages/AddFormPage.dart';
+import 'package:lapor_book_bk/pages/DetailPage.dart';
 import 'package:lapor_book_bk/pages/LoginPage.dart';
 import 'package:lapor_book_bk/pages/SplashPage.dart';
 import 'package:lapor_book_bk/pages/RegisterPage.dart';
@@ -20,7 +22,8 @@ void main() async {
       '/login': (context) => const LoginPage(),
       '/register': (context) => const RegisterPage(),
       '/dashboard': (context) => const DashboardPage(),
-      // Tambahkan route lain jika ada
+      '/add': (context) => AddFormPage(),
+      '/detail': (context) => DetailPage(),
     },
     // Hapus onGenerateRoute jika tidak diperlukan
     // onGenerateRoute: (settings) {...},

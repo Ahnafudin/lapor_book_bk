@@ -29,15 +29,21 @@ class LoginPageState extends State<LoginPage> {
       await _auth.signInWithEmailAndPassword(
           email: email!, password: password!);
 
+      if (!mounted) return;
+
       Navigator.pushNamedAndRemoveUntil(
           context, '/dashboard', ModalRoute.withName('/dashboard'));
     } catch (e) {
+      if (!mounted) return;
+
       final snackbar = SnackBar(content: Text(e.toString()));
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -55,11 +61,9 @@ class LoginPageState extends State<LoginPage> {
                   children: [
                     const SizedBox(height: 80),
                     Text('Login', style: headerStyle(level: 2)),
-                    Container(
-                      child: const Text(
-                        'Login to your account',
-                        style: TextStyle(color: Colors.grey),
-                      ),
+                    const Text(
+                      'Login to your account',
+                      style: TextStyle(color: Colors.grey),
                     ),
                     const SizedBox(height: 50),
                     Container(

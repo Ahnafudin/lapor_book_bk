@@ -57,11 +57,9 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               const SizedBox(height: 80),
               Text('Register', style: headerStyle(level: 1)),
-              Container(
-                child: const Text(
-                  'Create your profile to start your journey',
-                  style: TextStyle(color: Colors.grey),
-                ),
+              const Text(
+                'Create your profile to start your journey',
+                style: TextStyle(color: Colors.grey),
               ),
               const SizedBox(height: 50),
               Container(
