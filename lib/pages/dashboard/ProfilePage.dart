@@ -23,10 +23,10 @@ class _ProfileState extends State<Profile> {
     return SafeArea(
       child: Container(
         width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             Text(
@@ -43,12 +43,12 @@ class _ProfileState extends State<Profile> {
                   fontWeight: FontWeight.bold,
                   fontSize: 20),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(color: primaryColor),
@@ -64,7 +64,7 @@ class _ProfileState extends State<Profile> {
             ),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(color: primaryColor),
@@ -78,17 +78,17 @@ class _ProfileState extends State<Profile> {
                     fontSize: 20),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: FilledButton(
                 style: buttonStyle,
                 onPressed: () {
                   keluar(context);
                 },
-                child: Text('Logout',
+                child: const Text('Logout',
                     style: TextStyle(color: Colors.white, fontSize: 20)),
               ),
             ),

@@ -8,7 +8,7 @@ var successColor = const Color(0xFF5CB85C); // Warna hijau
 var greyColor = const Color(0xFFAFAFAF); // Warna abu-abu
 
 TextStyle headerStyle({int level = 1, bool dark = true}) {
-  List<double> levelSize = [30, 24, 20];
+  List<double> levelSize = [30, 24, 20, 16, 12];
   return TextStyle(
     fontSize: levelSize[level - 1],
     fontWeight: FontWeight.bold,

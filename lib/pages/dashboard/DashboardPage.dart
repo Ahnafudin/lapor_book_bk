@@ -12,7 +12,7 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DashboardFull();
+    return const DashboardFull();
   }
 }
 
@@ -49,7 +49,7 @@ class _DashboardFull extends State<DashboardFull> {
           .get();
 
       if (querySnapshot.docs.isNotEmpty) {
-        var userData = querySnapshot.docs.first.data() as Map<String, dynamic>;
+        var userData = querySnapshot.docs.first.data();
 
         setState(() {
           akun = Akun(
@@ -97,7 +97,7 @@ class _DashboardFull extends State<DashboardFull> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
-        child: Icon(Icons.add, size: 35),
+        child: const Icon(Icons.add, size: 35),
         onPressed: () {
           Navigator.pushNamed(context, '/add', arguments: {
             'akun': akun,
@@ -106,7 +106,7 @@ class _DashboardFull extends State<DashboardFull> {
       ),
       appBar: AppBar(
         backgroundColor: primaryColor,
-        title: Text('Lapor Book', style: headerStyle(level: 2)),
+        title: Text('Lapor Book', style: headerStyle(level: 2, dark: false)),
         centerTitle: true,
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -115,7 +115,7 @@ class _DashboardFull extends State<DashboardFull> {
         onTap: _onItemTapped,
         selectedItemColor: Colors.white,
         selectedFontSize: 16,
-        unselectedItemColor: Colors.grey[800],
+        unselectedItemColor: greyColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard_outlined),

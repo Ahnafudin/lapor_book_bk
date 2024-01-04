@@ -80,8 +80,7 @@ class LoginPageState extends State<LoginPage> {
                                             email = value;
                                           }),
                                       validator: notEmptyValidator,
-                                      decoration: customInputDecoration(
-                                          "email@email.com"))),
+                                      decoration: customInputDecoration(""))),
                               InputLayout(
                                   'Password',
                                   TextFormField(
@@ -93,7 +92,8 @@ class LoginPageState extends State<LoginPage> {
                                       decoration: customInputDecoration(""))),
                               Container(
                                 margin: const EdgeInsets.only(top: 20),
-                                width: double.infinity,
+                                width: MediaQuery.of(context).size.width *
+                                    0.8, // Ukuran lebar button
                                 child: FilledButton(
                                     style: buttonStyle,
                                     child: Text('Login',
@@ -112,11 +112,11 @@ class LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text('Belum punya akun? '),
+                        const Text("Don't have an account? "),
                         InkWell(
                           onTap: () =>
                               Navigator.pushNamed(context, '/register'),
-                          child: const Text('Daftar di sini',
+                          child: const Text('Sign up',
                               style: TextStyle(fontWeight: FontWeight.bold)),
                         )
                       ],

@@ -27,7 +27,6 @@ class _SplashPage extends State<SplashFull> {
 
     if (user != null) {
       Future.delayed(Duration.zero, () {
-        // buat dashboard terlebih dahulu, lalu hapus komen line code dibawah ini
         Navigator.pushReplacementNamed(context, '/dashboard');
       });
     } else {
@@ -42,7 +41,7 @@ class _SplashPage extends State<SplashFull> {
     return const MaterialApp(
         home: Scaffold(
       body: Center(
-        child: Text('Selamat datang di Aplikasi Laporan'),
+        child: Text('Welcome to Udin Lapor Book!!'),
       ),
     ));
   }

@@ -8,13 +8,13 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatefulWidget {
-  DetailPage({super.key});
+  const DetailPage({super.key});
   @override
   State<StatefulWidget> createState() => _DetailPageState();
 }
 
 class _DetailPageState extends State<DetailPage> {
-  bool _isLoading = false;
+  final bool _isLoading = false;
 
   String? status;
 
@@ -68,11 +68,11 @@ class _DetailPageState extends State<DetailPage> {
                         laporan.judul,
                         style: headerStyle(level: 3),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       laporan.gambar != ''
                           ? Image.network(laporan.gambar!)
                           : Image.asset('assets/istock-default.jpg'),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -90,39 +90,39 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                       const SizedBox(height: 20),
                       ListTile(
-                        leading: Icon(Icons.person),
+                        leading: const Icon(Icons.person),
                         title: const Center(child: Text('Nama Pelapor')),
                         subtitle: Center(
                           child: Text(laporan.nama),
                         ),
-                        trailing: SizedBox(width: 45),
+                        trailing: const SizedBox(width: 45),
                       ),
                       ListTile(
-                        leading: Icon(Icons.date_range),
-                        title: Center(child: Text('Tanggal Laporan')),
+                        leading: const Icon(Icons.date_range),
+                        title: const Center(child: Text('Tanggal Laporan')),
                         subtitle: Center(
                             child: Text(DateFormat('dd MMMM yyyy')
                                 .format(laporan.tanggal))),
                         trailing: IconButton(
-                          icon: Icon(Icons.location_on),
+                          icon: const Icon(Icons.location_on),
                           onPressed: () {
                             launch(laporan.maps);
                           },
                         ),
                       ),
-                      SizedBox(height: 50),
+                      const SizedBox(height: 50),
                       Text(
                         'Deskripsi Laporan',
                         style: headerStyle(level: 3),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Container(
                         width: double.infinity,
-                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
                         child: Text(laporan.deskripsi ?? ''),
                       ),
                       if (akun.role == 'admin')
-                        Container(
+                        SizedBox(
                           width: 250,
                           child: ElevatedButton(
                             onPressed: () {
@@ -138,7 +138,7 @@ class _DetailPageState extends State<DetailPage> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: Text('Ubah Status'),
+                            child: const Text('Ubah Status'),
                           ),
                         ),
                     ],

@@ -69,14 +69,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: Column(
                     children: [
                       InputLayout(
-                          'Nama',
+                          'Name',
                           TextFormField(
                               onChanged: (String value) => setState(() {
                                     nama = value;
                                   }),
                               validator: notEmptyValidator,
-                              decoration:
-                                  customInputDecoration("Nama Lengkap"))),
+                              decoration: customInputDecoration(""))),
                       InputLayout(
                           'Email',
                           TextFormField(
@@ -84,17 +83,15 @@ class _RegisterPageState extends State<RegisterPage> {
                                     email = value;
                                   }),
                               validator: notEmptyValidator,
-                              decoration:
-                                  customInputDecoration("email@email.com"))),
+                              decoration: customInputDecoration(""))),
                       InputLayout(
-                          'No. Handphone',
+                          'Phone number',
                           TextFormField(
                               onChanged: (String value) => setState(() {
                                     noHP = value;
                                   }),
                               validator: notEmptyValidator,
-                              decoration:
-                                  customInputDecoration("+62 80000000"))),
+                              decoration: customInputDecoration(""))),
                       InputLayout(
                           'Password',
                           TextFormField(
@@ -103,7 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               obscureText: true,
                               decoration: customInputDecoration(""))),
                       InputLayout(
-                          'Konfirmasi Password',
+                          'Confirm Password',
                           TextFormField(
                               validator: (value) =>
                                   passConfirmationValidator(value, _password),
@@ -117,22 +114,24 @@ class _RegisterPageState extends State<RegisterPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Sudah punya akun? '),
+                  const Text('Already have an account? '),
                   InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, '/login');
                     },
-                    child: const Text('Login di sini',
+                    child: const Text('Sign in',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                   )
                 ],
               ),
               Container(
                 margin: const EdgeInsets.only(top: 20),
-                width: double.infinity,
+                width: MediaQuery.of(context).size.width *
+                    0.8, // Ukuran lebar button
                 child: ElevatedButton(
                   style: buttonStyle,
-                  child: Text('Register', style: headerStyle(level: 2)),
+                  child: Text('Register',
+                      style: headerStyle(level: 2, dark: false)),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       showDialog(
