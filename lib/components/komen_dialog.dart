@@ -42,7 +42,7 @@ class _KomentarWidgetState extends State<KomentarWidget> {
     } else {
       // Show an alert or a Snackbar if the comment is empty
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Komentar tidak boleh kosong')),
+        const SnackBar(content: Text('Komentar tidak boleh kosong')),
       );
     }
   }
@@ -53,7 +53,7 @@ class _KomentarWidgetState extends State<KomentarWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (widget.laporan.komentar?.isEmpty ?? true)
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text('Belum ada komentar'),
           ),
