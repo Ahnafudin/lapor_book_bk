@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:lapor_book_bk/components/komen_dialog.dart';
 import 'package:lapor_book_bk/components/status_dialog.dart';
 import 'package:lapor_book_bk/components/styles.dart';
+import 'package:lapor_book_bk/components/vars.dart';
 import 'package:lapor_book_bk/models/akun.dart';
 import 'package:lapor_book_bk/models/laporan.dart';
 import 'package:intl/intl.dart';
@@ -78,12 +79,12 @@ class _DetailPageState extends State<DetailPage> {
                         children: [
                           laporan.status == 'Posted'
                               ? textStatus(
-                                  'Posted', Colors.yellow, Colors.black)
+                                  'Posted', warnaStatus[0], Colors.white)
                               : laporan.status == 'Process'
                                   ? textStatus(
-                                      'Process', Colors.green, Colors.white)
+                                      'Process', warnaStatus[1], Colors.white)
                                   : textStatus(
-                                      'Done', Colors.blue, Colors.white),
+                                      'Done', warnaStatus[2], Colors.white),
                           textStatus(
                               laporan.instansi, Colors.white, Colors.black),
                         ],
