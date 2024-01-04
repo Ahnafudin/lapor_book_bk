@@ -97,7 +97,11 @@ class _DashboardFull extends State<DashboardFull> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
-        child: const Icon(Icons.add, size: 35),
+        child: const Icon(
+          Icons.add,
+          size: 35,
+          color: Colors.white,
+        ),
         onPressed: () {
           Navigator.pushNamed(context, '/add', arguments: {
             'akun': akun,

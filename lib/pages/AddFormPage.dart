@@ -151,7 +151,7 @@ class AddFormState extends State<AddFormPage> {
       }).catchError((e) {
         throw e;
       });
-      Navigator.popAndPushNamed(context, '/dashboard');
+      Navigator.pushReplacementNamed(context, '/dashboard');
     } catch (e) {
       final snackbar = SnackBar(content: Text(e.toString()));
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
@@ -221,8 +221,7 @@ class AddFormState extends State<AddFormPage> {
                                 decoration: customInputDecoration('Instansi'),
                                 items: dataInstansi.map((e) {
                                   return DropdownMenuItem<String>(
-                                      value: e,
-                                      child: Text(e));
+                                      value: e, child: Text(e));
                                 }).toList(),
                                 onChanged: (selected) {
                                   setState(() {

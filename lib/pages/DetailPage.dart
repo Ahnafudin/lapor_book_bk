@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:lapor_book_bk/components/komen_dialog.dart';
+import 'package:lapor_book_bk/components/komen_dialog.dart';
 import 'package:lapor_book_bk/components/status_dialog.dart';
 import 'package:lapor_book_bk/components/styles.dart';
 import 'package:lapor_book_bk/components/vars.dart';
@@ -111,17 +111,18 @@ class _DetailPageState extends State<DetailPage> {
                           },
                         ),
                       ),
+
+                      // DESKRIPSI SECTION
                       const SizedBox(height: 50),
-                      Text(
-                        'Deskripsi Laporan',
-                        style: headerStyle(level: 3),
-                      ),
+                      Text('Deskripsi Laporan', style: headerStyle(level: 3)),
                       const SizedBox(height: 20),
                       Container(
                         width: double.infinity,
                         margin: const EdgeInsets.symmetric(horizontal: 20),
                         child: Text(laporan.deskripsi ?? ''),
                       ),
+
+                      // UBAH LAPORAN ADMIN
                       if (akun.role == 'admin')
                         SizedBox(
                           width: 250,
@@ -142,6 +143,19 @@ class _DetailPageState extends State<DetailPage> {
                             child: const Text('Ubah Status'),
                           ),
                         ),
+
+                      // KOMENTAR SECTION
+                      const SizedBox(height: 50),
+                      Text('Komentar', style: headerStyle(level: 3)),
+                      const SizedBox(height: 20),
+                      Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        child: KomentarWidget(
+                          laporan: laporan,
+                          akun: akun,
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -116,7 +116,7 @@ class _ListItemState extends State<ListItem> {
                           bottomLeft: Radius.circular(5),
                         ),
                         border: const Border.symmetric(
-                            vertical: BorderSide(width: 2))),
+                            vertical: BorderSide(width: 1))),
                     alignment: Alignment.center,
                     child: Text(
                       widget.laporan.status,
