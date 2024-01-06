@@ -59,17 +59,24 @@ class _AllLaporanState extends State<AllLaporan> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final crossAxisCount =
+        screenWidth < 600 ? 2 : 4; // 2 columns for narrow screens, 4 for wider
+    final childAspectRatio = screenWidth < 600
+        ? 1 / 1.25
+        : 1 / 1.6; // Adjust aspect ratio based on screen width
     getTransaksi();
+
     return SafeArea(
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.all(20),
         child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: 1 / 1.185,
+              childAspectRatio: childAspectRatio,
             ),
             itemCount: listLaporan.length,
             itemBuilder: (context, index) {
